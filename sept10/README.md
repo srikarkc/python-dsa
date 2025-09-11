@@ -16,3 +16,8 @@ Use the slow and fast pointer.
 If pointers are never equal to each other - return False i.e. no Loop.
 
 If pointers are equal at some point - there must be a loop.
+
+
+# Remove duplicates
+
+If you use `while slow.next is not None` instead of `while slow is not None` for the outer loop in O(n^2) solution; the last node will never be checked!
