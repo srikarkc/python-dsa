@@ -149,3 +149,15 @@ class DoublyLinkedList:
 
         self.length -= 1
         return node.value
+    
+    def check_palindrome(self):
+        first = self.head
+        last = self.tail
+
+        for i in range(self.length // 2):
+            if first.value != last.value:
+                return False
+            first = first.next
+            last = last.prev
+
+        return True
