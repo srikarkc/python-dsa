@@ -22,7 +22,7 @@ class Heap:
         # Then we bubble up the value to the appropriate position
         current = len(self.heap) - 1
 
-        while current > 0 and self.heap[current] > self._parent(current):
+        while current > 0 and self.heap[current] > self.head[self._parent(current)]:
             # Swap function takes indices
             self._swap(current, self._parent(current))
             current = self._parent(current)
