@@ -66,17 +66,18 @@ class BinarySearchTree:
                 return None
             
             # Case 2 - only right node
-            if current_node.left == None:
+            elif current_node.left == None:
                 current_node = current_node.right
 
             # Case 3 - only left node
-            if current_node.right == None:
+            elif current_node.right == None:
                 current_node = current_node.left
 
             # Case 4 - both node and right subtree
-            sub_tree_min = self.min_value(current_node.right)
-            current_node.value = sub_tree_min
-            current_node.right = self.__delete_node(current_node.right, sub_tree_min)
+            else:
+                sub_tree_min = self.min_value(current_node.right)
+                current_node.value = sub_tree_min
+                current_node.right = self.__delete_node(current_node.right, sub_tree_min)
         
         return current_node
     
