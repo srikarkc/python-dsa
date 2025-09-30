@@ -25,4 +25,6 @@ class BinarySearchTree:
 
     # Notice in the recursive insert there is no return method
     def r_insert(self, value):
+        if self.root == None:
+            self.root = Node(value)
         self.__r_insert(self.root, value)
