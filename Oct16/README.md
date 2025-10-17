@@ -7,3 +7,18 @@
 ## Trees
 
 A linked list is a tree that doesn't fork.
+
+---
+
+## @dataclass
+
+```python
+from dataclasses import dataclass
+from typing import Optional
+
+@dataclass
+class Node:
+    value: int
+    left: Optional["Node"] = None
+    right: Optional["Node"] = None
+```
