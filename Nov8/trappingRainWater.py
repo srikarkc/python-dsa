@@ -24,23 +24,20 @@ def trappingRainWater(height):
 # Optimal O(n) time complexity sol'n with O(1) space
 
 def optimalTrapWater(height):
-    n = len(height)
-    l, r = 0, n - 1
-    left_max = right_max = 0
-    water = 0
+    if not height:
+        return 0
+    
+    l, r = 0, len(height) - 1
+    leftMax, rightMax = height[l], height[r]
+    res = 0
 
     while l < r:
-        if height[l] >= height[r]:
-            if height[l] >= left_max:
-                left_max = height[l]
-            else:
-                water += left_max - height[l]
+        if leftMax < rightMax:
             l += 1
+            leftMax = max(leftMax, height[l])
+            res += leftMax - height[l]
         else:
-            if height[r] >= right_max:
-                right_max = height[r]
-            else:
-                water += right_max - height[r]
             r -= 1
-
-    return water
+            rightMax = max(rightMax, height[r])
+            res += rightMax - height[r]
+    return res
