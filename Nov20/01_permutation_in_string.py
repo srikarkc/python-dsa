@@ -21,8 +21,8 @@ def checkInclusion(s1, s2):
     
     s1Count, s2Count = [0] * 26, [0] * 26
     for i in range(len(s1)):
-        s1Count[ord(s[i]) - ord('a')] += 1
-        s2Count[ord(s[i]) - ord('a')] += 1
+        s1Count[ord(s1[i]) - ord('a')] += 1
+        s2Count[ord(s2[i]) - ord('a')] += 1
 
     matches = 0
     for i in range(26):
