@@ -10,9 +10,9 @@ class Solution:
         cur = root
 
         while cur:
-            if p.val < cur and q.val < cur:
+            if p.val < cur.val and q.val < cur.val:
                 cur = cur.left
-            elif p.val > cur and q.val > cur:
+            elif p.val > cur.val and q.val > cur.val:
                 cur = cur.right
             else:
                 return cur
