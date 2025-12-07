@@ -5,11 +5,11 @@ class TreeNode:
         self.val = val
         self.left, self.right = left, right
 
-# Easy problem1 - Invert Binary Tree
+# Problem 1 - Invert binary tree
 class Solution1:
     def invertBinaryTree(self, root):
         if not root:
-            return None
+            return
         
         queue = deque([root])
 
@@ -21,11 +21,25 @@ class Solution1:
                 queue.append(node.left)
             if node.right:
                 queue.append(node.right)
-            
-        return root
-   
 
-# Easy problem2 - Maximum Depth of Binary Tree
+        return root
+
+
+# Problem 1 - with recursion
+class Solution1_1:
+    def invertBinaryTree(self, root):
+        if not root:
+            return
+        
+        self.left, self.right = self.right, self.left
+
+        self.invertBinaryTree(root.left)
+        self.invertBinaryTree(root.right)
+
+        return root
+    
+
+# Problem 2 - Maximum depth of a binary tree
 class Solution2:
     def maxDepth(self, root):
         if not root:
@@ -47,10 +61,10 @@ class Solution2:
         return depth
     
 
-# Easy problem3 - Same Binary Tree
+# Problem 3 - Same Binary Tree
 class Solution3:
-    def isSameTree(self, p, q):
-        queue_p, queue_q = deque([q]), deque([q])
+    def sameBinaryTree(self, p, q):
+        queue_p, queue_q = deque([p]), deque([q])
 
         while queue_p and queue_q:
             for _ in range(len(queue_p)):
@@ -69,7 +83,7 @@ class Solution3:
         return True
     
 
-# Easy problem4 - Subtree of another Tree
+# Problem 4 - Subtree of another tree
 class Solution4:
     def isSubtree(self, root, subRoot):
         if not subRoot:
@@ -91,3 +105,41 @@ class Solution4:
             return False
         
         return self.isSameTree(p.left, q.left) and self.isSameTree(p.right, q.right)
+    
+
+# Problem 5 - Lowest common ancestor of a binary search tree
+class Solution5:
+    def lowestCommonAncestor(root, p, q):
+        cur = root
+
+        while cur:
+            if p.val > cur.val and q.val > cur.val:
+                cur = cur.right
+            elif p.val < cur.val and q.val < cur.val:
+                cur = cur.left
+            else:
+                return cur
+            
+
+# Problem 6 - Binary tree level order traversal
+class Solution6:
+    def binaryTreeLevelOrderTraversal(self, root):
+        if not root:
+            return []
+        
+        result = []
+        queue = deque([root])
+
+        while queue:
+            level_results = []
+            for _ in range(len(queue)):
+                node = queue.popleft()
+                level_results.append(node)
+
+                if node.left:
+                    queue.append(node.left)
+                if node.right:
+                    queue.append(node.right)
+            result.append(level_results)
+
+        return result
