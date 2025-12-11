@@ -6,7 +6,7 @@ class TreeNode:
 
 class Solution:
     def buildTree(self, preorder, inorder):
-        if not preorder or inorder:
+        if not preorder or not inorder:
             return None
         
         index_map = {value: i for i, value in enumerate(inorder)}
