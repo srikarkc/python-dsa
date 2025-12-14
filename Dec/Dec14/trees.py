@@ -5,7 +5,7 @@ class TreeNode:
         self.val = val
         self.left, self.right = left, right
 
-class Solution:
+class Trees:
     def bfs(self, root):
         if not root:
             return []
@@ -23,7 +23,7 @@ class Solution:
                 q.append(node.right)
 
         return result
-
+    
     def preorder(self, root):
         if not root:
             return []
@@ -40,28 +40,27 @@ class Solution:
                 stack.append(node.left)
 
         return result
-
+    
     def inorder(self, root):
         stack, result = [], []
         curr = root
 
-        while curr or stack:
+        while stack or curr:
             while curr:
                 stack.append(curr)
                 curr = curr.left
-
+            
             curr = stack.pop()
             result.append(curr.val)
             curr = curr.right
-        
-        return result
 
+        return result
+    
     def postorder(self, root):
         if not root:
             return []
-
-        stack = [root]
-        result = []
+        
+        stack, result = [root], []
 
         while stack:
             node = stack.pop()
@@ -71,5 +70,5 @@ class Solution:
                 stack.append(node.left)
             if node.right:
                 stack.append(node.right)
-
+        
         return result[::-1]
