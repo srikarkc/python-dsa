@@ -16,6 +16,6 @@ DSU is also called as the Union-Find method.
 
 'if' implies one-way relation and 'iff' implies two-way relation.
 
-# DSU (Disjoint set union)
+### DSU (Disjoint set union)
 
 1. A disjoint set (aka non-overlapping set) is a collection of sets where no element appears in more than one set.
