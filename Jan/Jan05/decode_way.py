@@ -8,7 +8,7 @@ class Solution:
         for i in range(1, len(s)):
             curr = 0
 
-            if s[i] != 0:
+            if s[i] != '0':
                 curr += prev1
 
             two = int(s[i - 1:i + 1])
