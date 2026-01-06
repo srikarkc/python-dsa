@@ -1,6 +1,6 @@
 class Solution:
     def numDecodings(self, s):
-        if s[0] == 0:
+        if s[0] == '0':
             return 0
         
         prev2, prev1 = 1, 1
