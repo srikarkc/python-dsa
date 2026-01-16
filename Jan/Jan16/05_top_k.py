@@ -3,14 +3,14 @@ from collections import Counter
 class Solution:
     def topKFrequent(self, nums, k):
         count = Counter(nums)
+        n = len(nums)
 
-        # max number of times a number can occur is the length of the list
-        buckets = [[] for _ in range(len(nums) + 1)]
+        buckets = [[] for _ in range(n + 1)]
 
-        # put the numbers in their respective position
-        for num, freq in count.items():
+        for num, freq in count:
             buckets[freq].append(num)
-
+            # we append because more than 1 number can have the same frequency
+        
         res = []
         for freq in range(len(buckets) - 1, 0, -1):
             for num in buckets[freq]:
