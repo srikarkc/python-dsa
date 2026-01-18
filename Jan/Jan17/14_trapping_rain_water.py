@@ -13,6 +13,7 @@ class Solution:
                     left_max = height[l]
                 else:
                     res += left_max - height[l]
+                l += 1
             else:
                 if height[r] >= right_max:
                     right_max = height[r]
