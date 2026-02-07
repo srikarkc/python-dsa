@@ -16,7 +16,7 @@ class Solution:
             right = max(0, dfs(node.right))
 
             best = max(best, node.val + left + right)
-            return node.val + best(left, right)
+            return node.val + max(left, right)
 
         dfs(root)
         return best
