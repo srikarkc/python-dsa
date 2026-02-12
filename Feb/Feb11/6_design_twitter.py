@@ -9,7 +9,7 @@ class Twitter:
 
     def postTweet(self, userId, tweetId):
         self.time -= 1
-        self.tweets[userId].append((self.time, tweedId))
+        self.tweets[userId].append((self.time, tweetId))
 
     def getNewsFeed(self, userId):
         res = []
