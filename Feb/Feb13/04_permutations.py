@@ -8,7 +8,7 @@ class Solution:
                 res.append(path[:])
                 return
 
-            for i in range(start, len(nums)):
+            for i in range(len(nums)):
 
                 if used[i]:
                     continue
@@ -19,7 +19,7 @@ class Solution:
                 backtrack(path, used)
 
                 path.pop()
-                user[i] = False
+                used[i] = False
 
         backtrack([], [False] * len(nums))
 
