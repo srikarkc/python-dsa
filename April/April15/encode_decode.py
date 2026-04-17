@@ -1,6 +1,6 @@
 class Solution:
     
-    def encode(self, str):
+    def encode(self, strs):
         res = ""
         for s in strs:
             res += str(len(s)) + '#' + s
