@@ -1,5 +1,6 @@
 class Solution:
     def product_of_array_except_self(self, nums):
+        n = len(nums)
         prefix, postfix = [1] * n, [1] * n
         res = [1] * n
 
