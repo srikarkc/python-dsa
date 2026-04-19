@@ -1,5 +1,5 @@
 class Solution:
-    def top_k_freq_elements(self, nums, k):
+    def topKFrequent(self, nums, k):
         count_map = {}
         for num in nums:
             count_map[num] = count_map.get(num, 0) + 1
@@ -9,9 +9,8 @@ class Solution:
             freq[count].append(num)
 
         res = []
-        for f in (range(len(freq) - 1), -1, -1):
+        for f in range(len(freq) - 1, -1, -1):
             for num in freq[f]:
-                res.apppend(num)
+                res.append(num)
                 if len(res) == k:
                     return res
-                
