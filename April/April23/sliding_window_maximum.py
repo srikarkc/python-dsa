@@ -16,6 +16,6 @@ class Solution:
             dq.append(i)
 
             if i >= k - 1:
-                result.append(nums[dq[0]])
+                res.append(nums[dq[0]])
 
-        return result
+        return res
