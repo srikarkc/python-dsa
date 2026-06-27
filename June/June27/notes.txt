@@ -1,0 +1,7 @@
+For the lnogest repeating char replacement problem: 
+remember that the window is valid if:
+windows_length - count_of_most_frequent_char <= k
+
+We use a sliding window approach for this problem.
+Maintain a window [left, right] and expand by moving right.
+When window becomes invalid - slide left forward to shrink it.
