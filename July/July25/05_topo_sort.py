@@ -38,3 +38,6 @@ def topo_sort_dfs(n, graph):
         if color[v] == WHITE and not dfs(v):
             return []
     return order[::-1]                              # NEW: your .reverse()!
+
+edges = [(0,1), (0,2), (1,3), (2,3)]
+print(topo_sort(4, edges=edges))
